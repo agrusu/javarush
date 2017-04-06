@@ -48,6 +48,25 @@ public class Solution {
 
 
         // напишите тут ваш код
+        ArrayList<Integer> numbers = new ArrayList<Integer>();
+        for (int i=0; i<33; i++)
+            numbers.add(0);
+
+        for (int i=0; i<list.size(); i++ ) {
+            char[] line = list.get(i).toCharArray();
+            for (int j=0; j<line.length; j++) {
+                for (int k=0; k<alphabet.size(); k++) {
+                    if (alphabet.get(k) == line[j]) {
+                        int f = numbers.get(k)+1;
+                        numbers.set(k, f);
+                    }
+                }
+            }
+        }
+
+        for (int i=0; i<numbers.size(); i++) {
+            System.out.println(alphabet.get(i)+" "+numbers.get(i));
+        }
     }
 
 }
